@@ -17,7 +17,6 @@ LOAD_ORDER = [
     '.helpers',
 
     # commands
-    '.status',
 
     # meta
     '.sublimelegit',
