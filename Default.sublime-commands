@@ -1,6 +1,6 @@
 [
-    { "caption": "SublimeLegit: Documentation", "command": "sublime_legit_documentation"},
-    { "caption": "SublimeLegit: Version", "command": "sublime_legit_version"},
+    { "caption": "Sublime Legit Documentation", "command": "sublime_legit_documentation"},
+    { "caption": "Sublime Legit Version", "command": "sublime_legit_version"},
 
     { "caption": "Legit: Branches", "command": "legit_branches"},
     { "caption": "Legit: Sync", "command": "legit_sync"},

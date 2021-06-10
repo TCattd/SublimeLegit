@@ -24,11 +24,11 @@ LOAD_ORDER = [
     '.git_extensions.git_flow',
 ]
 
-needs_reload = [n for n, m in list(sys.modules.items()) if n[0:4] == 'sgit' and m is not None]
+needs_reload = [n for n, m in list(sys.modules.items()) if n[0:4] == 'slegit' and m is not None]
 
 reloaded = []
 for postfix in LOAD_ORDER:
-    module = 'sgit' + postfix
+    module = 'slegit' + postfix
     if module in needs_reload:
         reloaded.append(module)
         reload(sys.modules[module])
@@ -44,9 +44,9 @@ if sys.version_info[0] == 2:
     lvl = getattr(logging, settings.get('log_level', '').upper(), logging.WARNING)
     logger.setLevel(lvl)
 
-    from sgit import *  # noqa
-    from sgit.git_extensions.legit import *  # noqa
-    from sgit.git_extensions.git_flow import *  # noqa
+    from slegit import *  # noqa
+    from slegit.git_extensions.legit import *  # noqa
+    from slegit.git_extensions.git_flow import *  # noqa
 
     # Enable plugins
     git_extensions.legit.enabled = settings.get('git_extensions', {}).get('legit', True)
@@ -55,9 +55,9 @@ if sys.version_info[0] == 2:
     def unload_handler():
         logging.shutdown()
 else:
-    from .sgit import *  # noqa
-    from .sgit.git_extensions.legit import *  # noqa
-    from .sgit.git_extensions.git_flow import *  # noqa
+    from .slegit import *  # noqa
+    from .slegit.git_extensions.legit import *  # noqa
+    from .slegit.git_extensions.git_flow import *  # noqa
 
     def plugin_loaded():
         settings = sublime.load_settings('SublimeLegit.sublime-settings')
